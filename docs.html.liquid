@@ -1,0 +1,45 @@
+  <div class="container">
+      <div class="row">
+        <div class="text-center">
+        
+          <h1>Getting started using our APIs</h1>
+        	<img src="/images/GettingStarted-01.png" alt="" width="90%">	
+            
+        	
+        	    
+        		<a class="btn btn-success" href="">Check our developer guide</a>
+              
+     
+        <h1>Interactive documentation</h1>
+
+<p>Use our interactive documentation to experience our Open Banking API</p>
+      </div>
+    </div>
+</div>
+        
+        
+{% cdn_asset /swagger-ui/2.2.10/swagger-ui.js %}
+        
+{% cdn_asset /swagger-ui/2.2.10/swagger-ui.css %}
+        
+
+{% include 'shared/swagger_ui', spec_system_name: "obp-spec" %}
+
+
+        
+
+
+
+
+<script type="text/javascript">
+  (function () {
+    {% comment %}
+      // you have access to swaggerUi.options object to customize its behaviour
+      // such as setting a different docExpansion mode
+      window.swaggerUi.options['docExpansion'] = 'none';
+      // or even getting the swagger specification loaded from a different url
+      window.swaggerUi.options['url'] = "http://petstore.swagger.wordnik.com/api/api-docs";
+    {% endcomment %}
+    window.swaggerUi.load();
+  }());
+</script>

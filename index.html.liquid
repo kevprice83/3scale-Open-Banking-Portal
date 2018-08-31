@@ -1,0 +1,333 @@
+<header class="jumbotron page-header" style="background-color: #004153">
+  <div class="container">
+    <div class="text-center">
+      
+        <h1>Red Hat Open Banking Platform</h1>
+      
+    </div>
+  </div>
+</header>
+
+{% if current_user %}
+  <section class="start">
+  <div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h1>Your API Key</h1>
+      <br>
+      <p class="lead">
+       This is your API key that should be kept secret. Use it to authenticate and report the calls you make to the Echo API.
+      </p>
+    </div>
+    <div class="col-md-6" style="padding-top:2em;">
+      <div class="panel panel-default" id="access-details">
+        <div class="panel-heading">
+          <i class="fa fa-key"></i>
+          Credentials
+          {% if current_account.applications.size > 0 %}
+            <a class="pull-right" href="{{ urls.applications }}" title="Applications">
+              <i class="fa fa-chevron-right"></i>
+            </a>
+          {% endif %}
+        </div>
+        <div class="panel-body panel-footer">
+          {% if current_account.applications.size == 0 %}
+            <a href="{{ urls.new_application }}" class="btn btn-primary">Create Application</a>
+          {% elsif current_account.applications.size == 1 %}
+            {% assign app = current_account.applications.first %}
+
+            {% if app.user_key_mode? %}
+              <dl class="dl-horizontal">
+                <dt>App name</dt>
+                <dd><a href="{{ app.url }}">{{ app.name }}</a></dd>
+                <dt>Key</dt>
+                <dd>
+                  <code>{{ app.user_key }}</code>
+                  <p>Add this as a <code>user_key</code> parameter to your API calls to authenticate.</p>
+                </dd>
+              </dl>
+
+            {% elsif app.app_id_mode? %}
+              <dl class="dl-horizontal">
+                <dt>App name</dt>
+                <dd><a href="{{ app.url }}">{{ app.name }}</a></dd>
+                <dt>App ID</dt>
+                <dd><code>{{ app.application_id }}</code></dd>
+                <dt>Key</dt>
+                <dd><code>{{ app.keys.first }}</code></dd>
+              </dl>
+
+            {% elsif app.oauth_mode? %}
+              <dl class="dl-horizontal">
+                <dt>App name</dt>
+                <dd><a href="{{ app.url }}">{{ app.name }}</a></dd>
+                <dt>Client ID</dt>
+                <dd><code>{{ app.application_id }}</code></dd>
+                <dt>Client Secret</dt>
+                <dd><code>{{ app.keys.first }}</code></dd>
+              </dl>
+            {% endif %}
+
+            {% if app.trial? %}
+              <div class="alert alert-warning">
+                <h3>Trial period</h3>
+                <p>{{ app.remaining_trial_period_days }} days remaining.</p>
+              </div>
+            {% endif %}
+
+          {% elsif current_account.applications.size > 1 %}
+            <a href="{{ urls.applications }}" class="btn btn-primary">See your Applications & their credentials</a>
+          {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </section>
+
+{% else %}
+
+  
+    <div class="landing-container quote-block">
+      <div class="text-center">
+        
+          <h1><i>“Banking services are necessary. Banks are not”</i></h1>
+          <h2><i> -- Bill Gates, mid 90s</i></h2>
+      </div>
+	</div>
+<div class="landing-container info-block">
+      <div class="text-center">
+          <h3>Build out your Open Banking Platform Business Model of the Future with APIs</h3>
+          <p>
+          Since 2011 the number of regulations a bank needs to track on a global level has tripled. Complying with all these regulations can be seen as a burden or even threat. But it can also be embraced to entirely reinvent a bank’s business and operational models. 
+          </p>
+          <p>
+Banks can open up their data and services in a controlled way, grow ecosystems around their assets and leverage banking innovations created by Third Parties.
+          </p>
+          <p>
+This is the power of <b>application programming interfaces</b> (APIs).
+          </p>
+        
+        
+       </div>
+      </div>
+  
+
+  
+   <!-- <div class="container landing-container">
+      <div class="text-center">
+        
+          <h1><b>API Catalog</b></h1>
+          <hr>
+          <p>
+          Our API catalog allows to search and invoke APIs from three different categories -- following the standard proposed by <a href="https://openbanking.org.uk">openbanking.org.uk</a>: Account Information API, Transaction Initiation API, and Open Data API.
+          </p>
+          <p>
+			
+          </p>
+          <p>
+			
+          </p>
+          <p>
+            <center>
+            <table class="paleBlueRows">
+            <thead>
+            <tr>
+            <th style="width: 33%;">Account Information API</th>
+            <th style="width: 33%;">Transaction Initiation API</th>
+            <th style="width: 33%;">Open Data API</th>
+            </tr>
+            </thead>
+            <tfoot>
+            <tr>
+            <td><a href="/docs">View API</a></td>
+            <td><a href="/docs">View API</a></td>
+            <td><a href="/docs">View API</a></td>
+            </tr>
+            </tfoot>
+            <tbody>
+            <tr>
+            <td>This allows regulated third party providers to read account information, such as transaction or balance details in an online payment account.</td>
+            <td>This allows regulated third party providers to set up or make payments directly from an online payment account, such as a single payment or a recurring payment.</td>
+            <td>This makes publicly available information easy to use in mobile and web applications. This data includes product information, ATM and branch locations plus information and metrics about service quality.</td></tr>
+            </tbody>
+            </tr>
+            </table>
+            </center>
+      	  </p>		    
+      	  <p></p>
+    	  <p>  
+            <center>  
+        		<a class="btn btn-success" href="/docs">Go to documentation</a>
+              		
+              	<a class="btn btn-success" href="/signup">Try the APIs now</a>
+    		</center>
+      	  </p>
+       </div>
+      </div>-->
+<div class="landing-container">
+      <div class="text-center">
+        <h1>API Catalog</h1>
+          <hr>
+          <p>
+          Our API catalog allows to search and invoke APIs from three different categories -- following the standard proposed by <a href="https://openbanking.org.uk">openbanking.org.uk</a>: Account Information API, Transaction Initiation API, and Open Data API.
+          </p>
+<div class="row">
+            <div class="col-xl-4 col-sm-6 mb-3">
+              <div class="card text-white bg-catalog o-hidden h-100">
+                <div class="card-header">Account Information API</div>
+                <div class="card-body">
+                  This allows regulated third party providers to read account information, such as transaction or balance details in an online payment account.
+                </div>
+                <a class="card-footer text-white clearfix small z-1" href="#">
+                  <span class="float-left">View Details</span>
+                  <span class="float-right">
+                    <i class="fas fa-angle-right"></i>
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div class="col-xl-4 col-sm-6 mb-3">
+              <div class="card text-white bg-catalog o-hidden h-100">
+                <div class="card-header">Transaction Initiation API</div>
+                <div class="card-body">
+                  This allows regulated third party providers to set up or make payments directly from an online payment account, such as a single payment or a recurring payment.
+                </div>
+                <a class="card-footer text-white clearfix small z-1" href="#">
+                  <span class="float-left">View Details</span>
+                  <span class="float-right">
+                    <i class="fas fa-angle-right"></i>
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div class="col-xl-4 col-sm-6 mb-3">
+              <div class="card text-white bg-catalog o-hidden h-100">
+                <div class="card-header">Open Data API</div>
+                <div class="card-body">
+                  This makes publicly available information easy to use in mobile and web applications. This data includes product information, ATM and branch locations plus information and metrics about service quality.
+                </div>
+                <a class="card-footer text-white clearfix small z-1" href="#">
+                  <span class="float-left">View Details</span>
+                  <span class="float-right">
+                    <i class="fas fa-angle-right"></i>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        <a class="btn btn-success" href="/docs">Go to documentation</a>
+              		
+              	<a class="btn btn-success" href="/signup">Try the APIs now</a>
+  </div>
+</div>
+
+
+
+
+  
+    <div class="landing-container">
+      <div class="text-center">
+      <h1>API Access Levels</h1>
+      <br/>
+      
+       {% for service in model.services %}
+        <div class="row">
+          
+        <h3 style="width: 100%;">{{ service.name }}</h3>
+        {% for plan in service.application_plans %}
+          <div class="col-xl-4 col-sm-6 mb-3">
+            <div class="card text-white bg-catalog o-hidden h-100">
+              <div class="card-header">
+                <strong>{{ plan.name }}</strong>
+              </div>
+              <div class="card-body">
+                <div class="row">
+
+                  {% if plan.features == present %}
+                    <div class="col-sm-6">
+                      <h5>Features</h5>
+                      <ul class="features list-unstyled">
+                        {% for feature in plan.features %}
+                          <li>
+                            <i class="fa fa-check"></i>
+                            {{ feature.name }}
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    </div>
+                  {% endif %}
+
+                  <div class="col-sm-6">
+                    <h5>Limits</h5>
+                    <ul class="limits list-unstyled">
+                      {% if plan.usage_limits == present %}
+                        {% for limit in plan.usage_limits %}
+                          <li>
+                            <i class="fas fa-signal"></i>
+                            {{ limit.metric.name }} &ndash; {{ limit.value }} {{ limit.metric.unit }}s per {{ limit.period }}
+                          </li>
+                        {% endfor %}
+                      {% else %}
+                        <li>
+                          <i class="fas fa-signal"></i>
+                          No limits
+                        </li>
+                      {% endif %}
+                    </ul>
+                  </div>
+
+                </div>
+              </div>
+                <div class="card-footer text-white clearfix small z-1">
+                <div class="row">
+                  <div class="col-xl-12">
+
+                    <a class="btn btn-success pull-right" href="{{ urls.signup }}?{{ plan | to_param }}">Signup to plan {{ plan.name }}</a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+          </div>
+        
+       {% endfor %}
+      
+      </div>
+    </div>
+  
+
+<!--
+  <section class="sell">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h3>Register</h3>
+          <p>
+          <i class="fa fa-sign-in fa-3x pull-left"></i>
+          Register to the developer portal to use the Echo API
+          </p>
+        </div>
+        <div class="col-md-4">
+          <h3>Get your API key</h3>
+          <p>
+          <i class="fa fa-key fa-3x pull-left"></i>
+          Use your API key to authenticate and report the calls you make
+          </p>
+        </div>
+       <div class="col-md-4">
+        <h3>Create your app</h3>
+         <p>
+         <i class="fa fa-code fa-3x pull-left"></i>
+         Start coding and create awesome applications with the Echo API
+         </p>
+        </div>
+       </div>
+      </div>
+  </section>
+-->
+{% endif %}
+
