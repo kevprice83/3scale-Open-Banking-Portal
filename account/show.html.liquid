@@ -1,33 +1,44 @@
-<div class="row">
-  <div class="col-md-9">
-    {% include 'users_menu' %}
-    <div class="panel panel-default">
-      <div class="panel-heading important">
-        {% if current_account.can.be_updated? %}
-          <a href="{{ current_account.edit_url }}" class="pull-right">
-            <i class="fa fa-pencil"></i>
-            Edit Account
-          </a>
-          <div class="clearfix"></div>
-        {% endif %}
-      </div>
-      <div class="panel-body panel-footer">
-        <dl class="dl-horizontal wide">
-          {% for field in current_account.fields %}
-            {% if field.value != "" and field.visible? %}
-              <dt>{{ field.label }}</dt>
-              <dd>{{ field }}</dd>
-            {% endif %}
-          {% endfor %}
-          <!-- add one field bound to 'user' -->
-          <dt>{{ current_account.admin.fields.email.label }}</dt>
-          <dd>{{ current_account.admin.email }}</dd>
-        </dl>
-      </div>
-    </div>
-
-    <p><em>Please email to {{ provider.support_email | mail_to }} if
-    you have any problems with your account {% if current_account.can.be_deleted? %}
-    or you would like to cancel it. {% else %}. {% endif %}</em></p>
+{% include 'users_menu' %}
+<div class="card mb-3">
+  <div class="card-header">
+    {% if current_account.can.be_updated? %}
+    <i class="fas fa-edit"></i>
+    <a class="card-link" href="{{ current_account.edit_url }}">
+      Edit Account
+    </a>
+    {% endif %}
   </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            {% for field in current_account.fields %}
+            {% if field.value != "" and field.visible? %}
+            <th>{{ field.label }}</th>
+            {% endif %}
+            {% endfor %}
+            <!-- add one field bound to 'user' -->
+            <th>{{ current_account.admin.fields.email.label }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            {% for field in current_account.fields %}
+            {% if field.value != "" and field.visible? %}
+            <td>{{ field }}</td>
+            {% endif %}
+            {% endfor %}
+            <td>{{ current_account.admin.email }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card-footer">
+
+  <em>Please email to {{ provider.support_email | mail_to | class: "card-link" }} if
+      you have any problems with your account {% if current_account.can.be_deleted? %}
+      or you would like to cancel it. {% else %}. {% endif %}</em>
+      </div>
 </div>

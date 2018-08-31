@@ -153,15 +153,6 @@
       <div id="content-wrapper" {% if request.path == '/' %} class="landing-wrapper" {% else %}{% endif %}>
 
         <div {% if request.path == '/' %} {% else %} class="container-fluid" {% endif %}>
-			{% if current_user %}
-          <!-- Breadcrumbs-->
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-              <a href="{{ urls.applications }}">Dashboard</a>
-            </li>
-            <li class="breadcrumb-item active">Blank Page</li>
-          </ol>
-			{% endif %}
           <!-- Page Content -->
           {% content %}
 
