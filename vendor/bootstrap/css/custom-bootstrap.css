@@ -111,6 +111,57 @@ dl {
   margin-bottom: 1rem;
 }
 
+/* CUSTOM PANELS START */
+
+.panel-body {
+  padding: 15px 15px;
+}
+
+.dl-horizontal {
+  margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+  .dl-horizontal dt {
+    float: left;
+    width: 160px;
+    clear: left;
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .dl-horizontal dd {
+    margin-left: 180px;
+  }
+  .dl-horizontal dd:before,
+  .dl-horizontal dd:after {
+    content: " ";
+    /* 1 */
+
+    display: table;
+    /* 2 */
+
+  }
+  .dl-horizontal dd:after {
+    clear: both;
+  }
+  .dl-horizontal dd:before,
+  .dl-horizontal dd:after {
+    content: " ";
+    /* 1 */
+
+    display: table;
+    /* 2 */
+
+  }
+  .dl-horizontal dd:after {
+    clear: both;
+  }
+} 
+
+/* CUSTOM PANELS END */
+
 ol ol,
 ul ul,
 ol ul,
@@ -1576,6 +1627,30 @@ pre code {
 }
 
 /* CUSTOM STYLES STATS TABLE END */
+
+/* CUSTOM BUTTONS START */
+
+.pull-right {
+  float: right;
+}
+
+.btn-group {
+  display: inline-block !important;
+  vertical-align: middle;
+  position: relative;
+}
+
+.btn-header {
+  padding: 1px 5px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+}
+
+/* CUSTOM BUTTONS END */
 
 .table-borderless th,
 .table-borderless td,
@@ -3332,6 +3407,7 @@ input[type="button"].btn-block {
   -ms-flex-align: stretch;
   align-items: stretch;
   width: 100%;
+  margin-bottom: 1rem;
 }
 
 .input-group > .form-control,

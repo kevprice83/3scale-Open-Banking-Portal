@@ -1,7 +1,6 @@
-<div class="row">
-  <div class="col-md-9">
-    <div class="panel panel-default">
-      <div class="panel-heading">
+<div class="card mb-3">
+  
+      <div class="card-header">
 
         {% capture state_label %}
           {% case application.state %}
@@ -12,18 +11,18 @@
         {% endcapture %}
 
         <a href="{{ urls.applications }}">
-          <i class="fa fa-chevron-left"></i>
+          <i class="fas fa-chevron-left"></i>
           Applications
         </a>
 
         {% if application.can.be_updated? %}
           <a href="{{ application.edit_url }}" class="pull-right">
-            <i class="fa fa-pencil"></i>
+            <i class="fas fa-pencil"></i>
             Edit {{ application.name }}
           </a>
         {% endif %}
       </div>
-      <div class="panel-body body-footer">
+      <div class="panel-body">
         <dl class="dl-horizontal">
           <dt>Name</dt>
           <dd>{{ application.name }}</dd>
@@ -80,7 +79,7 @@
             <dt>Client Secret</dt>
             <dd class="key">
               <code>{{ application.keys.first }}</code>
-              <p class='sub'>This the Client Secret used to authenticate requests.</p>
+              <p class='sub'>This is the Client Secret used to authenticate requests.</p>
               <p>
                 {% if application.keys.size == 0 %}
                 {{ 'Create secret' | create_button: application.oauth.create_secret_url }}
@@ -94,15 +93,15 @@
             <dt>Redirect URL</dt>
             <dd class="key">
               <p class='sub'>This is your Redirect URL for OAuth.</p>
-              {% form 'application.updateremote', application %}
-              <fieldset class="inputs">
-                <label for="application_redirect_url">Redirect URL</label>
+              {% form 'application.updateremote', application, class: 'd-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0' %}
+              <div class="input-group">
+                <label for="application_redirect_url" style="margin-right: 20px;">Redirect URL</label>
                 <input type="text" id="application_redirect_url"
                 name="application[redirect_url]"
                 value="{{ application.redirect_url }}"
-                class="{{ application.errors.redirect_url | error_class }}"/>
+                class="{{ application.errors.redirect_url | error_class }} form-control"/>
                 {{ application.errors.redirect_url | inline_errors }}
-              </fieldset>
+              </div>
 
               <fieldset class="buttons">
                 <input class="btn btn-success" name="commit" type="submit" value="Submit">
@@ -203,6 +202,6 @@
           {% endif %}
         {% endif %}
       </div>
-    </div>
-  </div>
+    
 </div>
+
