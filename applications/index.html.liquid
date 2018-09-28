@@ -1,6 +1,12 @@
 <div class="card mb-3">
   <div class="card-header">
     <i class="fas fa-table"></i>
+    Applications
+    <div class="pull-right">
+      <div class="btn-group">
+        <a href="{{ urls.new_application }}" title="Create new application" class="btn-header" type="submit">Create new application</a>
+      </div>
+    </div>
   </div>
   <div class="card-body">
     <div class="table-responsive">
@@ -13,8 +19,6 @@
           
           <th>Credentials</th>
           <th>State</th>
-          <th>
-          </th>
         </tr>
       </thead>
       <tfoot>
@@ -27,9 +31,6 @@
           <th>State</th>
           <th>
           </th>
-        </tr>
-        <tr>
-          <a href="{{ urls.new_application }}" title="Create new application" class="btn btn-default btn-xs">Create new application</a>
         </tr>
       </tfoot>
       <tbody>
