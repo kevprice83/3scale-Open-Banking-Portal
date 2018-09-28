@@ -105,10 +105,31 @@
 	{% else %}
       <ul class="navbar-nav ml-auto">
         <li class="nav-item no-arrow mx-1">
+          <a class="nav-link" href="/docs" role="button">
+            Documentation
+          </a>
+        </li>
+        <li class="nav-item no-arrow mx-1">
+          <a class="nav-link" href="/bankingregulations" role="button">
+            Banking regulations
+          </a>
+        </li>
+        <li class="nav-item no-arrow mx-1">
+          <a class="nav-link" href="/appgallery" role="button">
+            App Gallery
+          </a>
+        </li>
+        <li class="nav-item no-arrow mx-1">
+          <a class="nav-link" href="/about" role="button">
+            About
+          </a>
+        </li>
+        <li class="nav-item no-arrow mx-1">
           <a class="nav-link" href="{{ urls.login }}" role="button">
             <i class="fas fa-sign-in-alt fa-fw"></i>
           </a>
         </li>
+      </ul>
      {% endif %}
     </nav>
 
