@@ -173,7 +173,7 @@ body.fixed-nav.sidebar-toggled #content-wrapper {
 }
 
 .sidebar .nav-item .nav-link:active, .sidebar .nav-item .nav-link:focus, .sidebar .nav-item .nav-link:hover {
-  color: rgb(132, 132, 132);
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .sidebar.toggled {
