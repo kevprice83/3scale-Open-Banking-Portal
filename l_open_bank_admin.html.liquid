@@ -53,7 +53,7 @@
       </button>
 	
       {% if current_user %}
-      <!-- Navbar Search -->
+      <!-- Navbar Search
       <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
         <div class="input-group">
           <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
@@ -64,9 +64,10 @@
           </div>
         </div>
       </form>
+      -->
 	
       <!-- Navbar -->
-      <ul class="navbar-nav ml-auto ml-md-0">
+      <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown no-arrow mx-1">
           <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-bell fa-fw"></i>
@@ -179,25 +180,14 @@
         </div>
         <!-- /.container-fluid -->
 		
-        {% if current_user %}
         <!-- Sticky Footer -->
-        <footer class="sticky-footer bg-dark">
+        <footer class="sticky-footer bg-dark" {% unless current_user %} style="width: 100%! important" {% endunless %}>
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
               <span>GPL {{ provider.name }} {{ today.year }}</span>
             </div>
           </div>
         </footer>
-        {% else %}
-        <!-- Sticky Footer Landing page only-->
-        <footer class="sticky-footer" style="width: 100%! important">
-          <div class="container my-auto">
-            <div class="copyright text-center my-auto">
-              <span>GPL {{ provider.name }} {{ today.year }}</span>
-            </div>
-          </div>
-        </footer>
-        {% endif %}
 
       </div>
       <!-- /.content-wrapper -->

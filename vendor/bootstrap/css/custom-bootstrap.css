@@ -5035,6 +5035,7 @@ ol > li.breadcrumb-item.active > a  {
 
 .landing-wrapper {
   padding: 0px !important;
+  background-color: #FFF;
 }
 
 .bg-catalog {

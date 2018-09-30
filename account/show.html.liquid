@@ -1,11 +1,17 @@
 {% include 'users_menu' %}
 <div class="card mb-3">
   <div class="card-header">
+  <i class="fas fa-cog"></i>
+  Account Details
     {% if current_account.can.be_updated? %}
+    <div class="pull-right">
+    <div class="btn-group">
     <i class="fas fa-edit"></i>
     <a class="card-link" href="{{ current_account.edit_url }}">
       Edit Account
     </a>
+    </div>
+    </div>
     {% endif %}
   </div>
   <div class="card-body">
