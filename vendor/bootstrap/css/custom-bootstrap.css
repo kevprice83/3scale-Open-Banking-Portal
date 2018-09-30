@@ -212,14 +212,14 @@ sup {
 }
 
 a {
-  color: #007bff;
+  color: #70A6AF;
   text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
 
 a:hover {
-  color: #0056b3;
+  color: #004355;
   text-decoration: underline;
 }
 
@@ -559,7 +559,7 @@ mark,
 
 code {
   font-size: 87.5%;
-  color: #e83e8c;
+  color: #B10000;
   word-break: break-word;
 }
 
@@ -3407,6 +3407,9 @@ input[type="button"].btn-block {
   -ms-flex-align: stretch;
   align-items: stretch;
   width: 100%;
+}
+
+.panel-input-group {
   margin-bottom: 1rem;
 }
 
