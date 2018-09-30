@@ -4068,6 +4068,7 @@ input[type="button"].btn-block {
   -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 0.5rem 1rem;
+  border-bottom: solid 3px #B10000;
 }
 
 .navbar > .container,
@@ -4738,7 +4739,7 @@ input[type="button"].btn-block {
   padding: 0.75rem 1rem;
   margin-bottom: 1rem;
   list-style: none;
-  background-color: #e9ecef;
+  background-color: #DCDCDC;
   border-radius: 0.25rem;
 }
 
