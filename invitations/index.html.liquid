@@ -1,16 +1,32 @@
-<div class="row">
-  <div class="col-md-9">
-    {% include 'users_menu' %}
-    <table class="table panel panel-default" id="invitations">
-      <thead class="panel-heading">
+{% include 'users_menu' %}
+  <div class="card mb-3">
+  <div class="card-header">
+  <i class="fas fa-envelope"></i>
+  Invitations
+  <div class="pull-right">
+          <div class="btn-group">
+          {% if current_user.can.invite_users? %}
+            <a href="{{ urls.new_invitation }}" class="pull-right">
+              <i class="fas fa-user-plus"></i>
+              Invite new user
+            </a>
+            {% endif %}
+          </div>
+          </div>
+  </div>
+  <div class="card-body">
+  <div class="table-responsive">
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+      <thead>
         <tr>
           <th>Recipient</th>
           <th>Sent</th>
           <th>Accepted?</th>
-          <th colspan="2"></th>
+          <th></th>
+          <th></th>
         </tr>
       </thead>
-      <tbody class="panel-body">
+      <tbody>
         {% if invitations.size > 0 %}
           {% for invitation in invitations %}
             <tr id="invitation_{{ invitation.id }}">
@@ -25,35 +41,35 @@
                   no
                 {% endif %}
               </td>
-              <td>
+              <td style="text-align: center;">
                   {% unless invitation.accepted? %}
-                    {{ "Resend" | update_button: invitation.resend_url, class: 'btn btn-link pull-right' }}
+                    {{ "Resend" | update_button: invitation.resend_url, class: 'btn-header' }}
                   {% endunless %}
-
               </td>
-              <td>
+              <td style="text-align: center;">
                   {% if current_user.can.invite_users? %}
-                      {{ '<i class="fa fa-trash pull-right"></i>' | html_safe | link_to: invitation.url, class: 'pull-right btn btn-link', method: 'delete' }}
+                      {{ '<i class="fas fa-trash"></i>' | html_safe | link_to: invitation.url, method: 'delete' }}
                   {% endif %}
               </td>
             </tr>
           {% endfor %}
         {% else %}
           <tr>
-            <td colspan="5">No invitations</td>
+            <td>No invitations</td>
           </tr>
         {% endif %}
       </tbody>
-      <tfoot class="panel-footer">
+      <tfoot>
         <tr>
-          <th colspan="5">
-            {% if current_user.can.invite_users? %}
-              {{ 'Invite new user' | link_to: urls.new_invitation, class: 'btn btn-primary pull-right' }}
-            {% endif %}
-          </th>
+          <th>Recipient</th>
+          <th>Sent</th>
+          <th>Accepted?</th>
+          <th></th>
+          <th></th>
         </tr>
       </tfoot>
     </table>
     {% include 'shared/pagination' with pagination %}
+    </div>
+    </div>
   </div>
-</div>

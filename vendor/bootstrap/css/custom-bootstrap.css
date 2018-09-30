@@ -4761,6 +4761,10 @@ input[type="button"].btn-block {
 }
 */
 
+ol > li.breadcrumb-item > a {
+  color: #2E2E2E;
+}
+
 .breadcrumb-item + .breadcrumb-item:hover::before {
   text-decoration: underline;
 }
@@ -4776,7 +4780,7 @@ input[type="button"].btn-block {
   margin-bottom: -3px;
 }
 
-#content-wrapper > div > ol > li.breadcrumb-item.active > a {
+ol > li.breadcrumb-item.active > a  {
   color: #B10000;
 }
 
