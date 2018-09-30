@@ -351,11 +351,13 @@ footer.sticky-footer {
   width: calc(100% - 90px);
   height: 80px;
   background-color: #e9ecef;
+  border-top: solid 3px #B10000;
 }
 
 footer.sticky-footer .copyright {
   line-height: 1;
   font-size: 0.8rem;
+  color:  #ffffff;
 }
 
 @media (min-width: 768px) {

@@ -1,22 +1,19 @@
-<div class="row">
-  <div class="col-md-9">
-    {% include 'users_menu' %}
-    <div class="panel panel-default">
-      <div class="panel-heading important">
+{% include 'users_menu' %}
+  <div class="card mb-3">
+      <div class="card-header">
         <a href="{{ urls.invitations }}">
-          <i class="fa fa-chevron-left"></i>
+          <i class="fas fa-chevron-left"></i>
           Cancel
         </a>
         New invitation
       </div>
-      <div class="panel-body panel-footer">
+      <div class="card-body">
         {% form 'invitation.create', invitation, class: "form-horizontal" %}
-          <fieldset>
+        <div class="col-md-6">
             <div class="form-group">
-              <label for="invitation_email" class="control-label col-md-4">
+              <label for="invitation_email">
                 Send invitation to
               </label>
-              <div class="col-md-6">
                 <input id="invitation_email" maxlength="255"
                      name="invitation[email]"
                      type="email"
@@ -28,14 +25,12 @@
                 </p>
               </div>
             </div>
-          </fieldset>
           <div class="form-group">
-            <div class="col-md-10">
-              <input name="commit" class="btn btn-success pull-right" type="submit" value="Invite User">
+            <div class="col-md-6">
+              <input name="commit" class="btn btn-success" type="submit" value="Invite User">
             </div>
           </div>
         {% endform %}
       </div>
-    </div>
+      </div>
   </div>
-</div>
