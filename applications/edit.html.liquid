@@ -6,7 +6,7 @@
         </a>
         {% if application.can.be_destroyed? %}
           <a href="{{ application.path }}" class="pull-right" data-method="delete" data-confirm="Are you sure you want to delete the application {{ application.name }} ?">
-            <i class="fas fa-trash-o"></i>
+            <i class="fas fa-trash"></i>
             Delete {{ application.name }}
           </a>
         {% endif %}
@@ -14,16 +14,16 @@
       <div class="panel-body">
         {% form 'application.update', application, class: "form-horizontal" %}
           {% include 'applications/form' %}
-          <fieldset>
+          
             <div class="form-group">
-              <div class="col-md-10">
-                <input class="btn btn-primary pull-right"
+              <div class="col-md-6">
+                <input class="btn btn-primary"
                   name="commit"
                   type="submit"
                   value="Update Application" />
               </div>
             </div>
-          </fieldset>
+          
         {% endform %}
       </div>
 </div>

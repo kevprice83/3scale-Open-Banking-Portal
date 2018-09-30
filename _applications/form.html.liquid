@@ -1,6 +1,6 @@
 <input type="hidden" id="cinstance_plan_id" name="application[plan_id]" value="{{ application.plan.id }}" />
 
-<fieldset>
+
   <div class="form-group" id="selected-plan" data-plan-id="{{ application.plan.id }}">
     <label class="control-label col-md-4">Plan</label>
     <div class="col-md-6">
@@ -19,13 +19,13 @@
 
     </div>
   </div>
-</fieldset>
 
-<fieldset>
+
+
   {% for field in application.fields %}
     {% include 'field' with field %}
   {% endfor %}
-</fieldset>
+
 
 {% include 'new_application_licence' %}
 
