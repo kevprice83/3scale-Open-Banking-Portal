@@ -130,6 +130,11 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
   color: #333;
 }
 
+input.delete {
+  background-color: #C50001;
+  border-color: #7E0000;
+}
+
 .plan-preview-box button, html .plan-preview-box input[type="button"], .plan-preview-box input[type="reset"], .plan-preview-box input[type="submit"] {
   display: inline-block;
   padding: 6px 12px;
