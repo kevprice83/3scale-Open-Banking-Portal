@@ -1,13 +1,20 @@
-<div class="row">
-  <div class="col-md-9">
-    {% include 'messages/menu' %}
-    <div class="panel panel-default">
-      <div class="panel-heading important">
-        {{ message.subject }} <span class="pull-right">by {{ message.sender }} at {{ message.created_at | date: i18n.long_date }}</span>
+{% include 'messages/menu' %}
+<div class="card mb-3">
+  <div class="card-header">
+        <a href="{{ urls.messages_trash }}">
+          <i class="fas fa-chevron-left"></i>
+          All trash
+        </a>
       </div>
-      <div class="panel-body panel-footer">
-        <pre class="message">{{ message.body }}</pre>
+    
+      <div class="card-body">
+        <dl class="dl-horizontal">
+          <dt>Subject</dt>
+          <dd>{{ message.subject }} by {{ message.sender }} at {{ message.created_at | date: i18n.long_date }}</dd>
+          <dt>Message</dt>
+          <dd><pre class="message">{{ message.body }}</pre></dd>
+        </dl>
       </div>
-    </div>
+    
   </div>
 </div>

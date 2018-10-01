@@ -211,7 +211,8 @@ sup {
   top: -.5em;
 }
 
-a {
+a,
+form > input.btn.btn-default {
   color: #70A6AF;
   text-decoration: none;
   background-color: transparent;
