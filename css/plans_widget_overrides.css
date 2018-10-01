@@ -82,8 +82,8 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
   white-space: nowrap;
   -webkit-user-select: none;
   color: rgb(255, 255, 255);
-  background-color: rgb(92, 184, 92);
-  border-color: rgb(76, 174, 76);
+  background-color: #0080A1;
+  border-color: #005267;
 }.plan-preview-box a:hover {
   color: #333;
 }
@@ -103,8 +103,8 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
   white-space: nowrap;
   -webkit-user-select: none;
   color: rgb(255, 255, 255);
-  background-color: rgb(92, 184, 92);
-  border-color: rgb(76, 174, 76);
+  background-color: #0080A1;
+  border-color: #005267;
 }.plan-preview-box a:hover {
   color: #333;
 }
@@ -124,8 +124,8 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
   white-space: nowrap;
   -webkit-user-select: none;
   color: rgb(255, 255, 255);
-  background-color: #58A800;
-  border-color: #3B7000;
+  background-color: #0080A1;
+  border-color: #005267;
 }.plan-preview-box a:hover {
   color: #333;
 }
@@ -150,6 +150,6 @@ input.delete {
   white-space: nowrap;
   -webkit-user-select: none;
   color: rgb(255, 255, 255);
-  background-color: rgb(92, 184, 92);
-  border-color: rgb(76, 174, 76);
+  background-color: #0080A1;
+  border-color: #005267;
 }
