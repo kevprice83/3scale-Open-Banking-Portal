@@ -1,24 +1,18 @@
-<div class="row">
-  <div class="col-md-9">
-    <div class="panel panel-default">
-      <div class="panel-heading">
+<div class="card mb-3">
+      <div class="card-header">
         New Application
       </div>
-      <div class="panel-body panel-footer">
+      <div class="card-body">
         {% form 'application.create', application, class: "form-horizontal" %}
           {% include 'applications/form' %}
-          <fieldset>
             <div class="form-group">
               <div class="col-md-10">
-                <input class="btn btn-primary pull-right"
+                <input class="btn btn-primary"
                                  name="commit"
                                  type="submit"
                                  value="Create Application" />
               </div>
             </div>
-          </fieldset>
         {% endform %}
       </div>
-    </div>
-  </div>
 </div>
