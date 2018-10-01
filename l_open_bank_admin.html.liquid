@@ -46,7 +46,7 @@
 
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-      <a class="navbar-brand mr-1" href="{{ urls.applications }}">{{provider.name}} API</a>
+      <a class="navbar-brand mr-1" href="/">{{provider.name}} API</a>
 
       <button class="btn btn-link btn-sm text-white order-sm-0" id="sidebarToggle" href="#">
         <i class="fas fa-bars"></i>
@@ -184,7 +184,7 @@
         <footer class="sticky-footer bg-dark" {% unless current_user %} style="width: 100%! important" {% endunless %}>
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
-              <span>GPL {{ provider.name }} {{ today.year }}</span>
+              <span>Red Hat {{ provider.name }} Platform {{ today.year }}</span>
             </div>
           </div>
         </footer>
