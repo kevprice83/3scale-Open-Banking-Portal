@@ -1,17 +1,19 @@
-<div class="row">
-  <div class="col-md-9">
-    {% include 'messages/menu' %}
-    <div class="panel panel-default">
-      <div class="panel-heading important">
+{% include 'messages/menu' %}
+<div class="card mb-3">
+      <div class="card-header">
         <a href="{{ urls.messages_inbox }}">
-          <i class="fa fa-chevron-left"></i>
+          <i class="fas fa-chevron-left"></i>
           All messages
         </a>
+        <div class="pull-right">
+        <div class="btn-group">
         <span class="pull-right">
-          {{ '<i class="fa fa-trash"></i>' | html_safe | link_to: message.url, method: 'delete' }}
+          {{ '<i class="fas fa-trash"></i>' | html_safe | link_to: message.url, method: 'delete' }}
         </span>
+        </div>
+        </div>
       </div>
-      <div class="panel-body">
+      <div class="card-body">
         <dl class="dl-horizontal">
           <dt>Subject</dt>
           <dd>{{ message.subject }}</dd>
@@ -20,9 +22,6 @@
           <dt>Message</dt>
           <dd><pre class="message">{{ message.body }}</pre></dd>
         </dl>
-      </div>
-
-      <div class="panel-footer important">
         {% comment %} only embed reply form if there is a sender to reply to {% endcomment %}
         {% if reply %}
           {% form 'message.reply', reply, { class: 'form-horizontal' } %}
@@ -38,14 +37,15 @@
                           tabindex="1"></textarea>
               </div>
             </div>
+            </div>
+            <div class="card-footer">
             <div class="form-group">
               <div class="col-md-10">
-                <button type="submit" class="btn btn-primary pull-right" tabindex="3">Send reply</button>
+                <button type="submit" class="btn btn-primary" tabindex="3">Send reply</button>
               </div>
             </div>
           {% endform %}
         {% endif %}
+        </div>
       </div>
-    </div>
-  </div>
 </div>

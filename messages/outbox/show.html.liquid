@@ -1,17 +1,19 @@
-<div class="row">
-  <div class="col-md-9">
-    {% include 'messages/menu' %}
-    <div class="panel panel-default">
-      <div class="panel-heading">
+{% include 'messages/menu' %}
+<div class="card mb-3">
+      <div class="card-header">
         <a href="{{ urls.messages_outbox }}">
-          <i class="fa fa-chevron-left"></i>
+          <i class="fas fa-chevron-left"></i>
           All messages
         </a>
-        <span class="pull-right">
+        <div class="pull-right">
+        <div class="btn-group">
+        <span>
           {{ '<i class="fa fa-trash"></i>' | html_safe | link_to: message.url, method: 'delete' }}
         </span>
+        </div>
+        </div>
       </div>
-      <div class="panel-body panel-footer">
+      <div class="card-body">
         <dl class="dl-horizontal">
           <dt>Subject</dt>
           <dd>{{ message.subject }}</dd>
@@ -21,6 +23,4 @@
           <dd><pre class="message">{{ message.body }}</pre></dd>
         </dl>
       </div>
-    </div>
-  </div>
 </div>

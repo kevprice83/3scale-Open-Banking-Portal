@@ -11,13 +11,13 @@
           </a>
         {% endif %}
       </div>
-      <div class="panel-body">
+      <div class="card-body">
         {% form 'application.update', application, class: "form-horizontal" %}
           {% include 'applications/form' %}
           
             <div class="form-group">
               <div class="col-md-6">
-                <input class="btn btn-primary"
+                <input class="btn btn-success"
                   name="commit"
                   type="submit"
                   value="Update Application" />

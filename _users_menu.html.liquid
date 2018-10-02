@@ -2,7 +2,7 @@
 <ol class="breadcrumb">
   {% unless current_account.requires_credit_card_now? %}
     <li class="breadcrumb-item">
-      <a class="breadcrumb-item {% if urls.account_overview.active? %}active{% endif %}" href="{{ urls.account_overview }}">Account Details</a>
+      <a class="breadcrumb-item {% if urls.account_overview.active? %}active{% endif %}" href="{{ urls.account_overview }}">Account Overview</a>
     </li>
 
     {% if provider.account_management_enabled? %}
