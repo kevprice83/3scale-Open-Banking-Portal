@@ -22,10 +22,11 @@
         
 {% cdn_asset /swagger-ui/2.2.10/swagger-ui.css %}
         
-
-{% include 'shared/swagger_ui', spec_system_name: "obp-spec" %}
-
-
+{% if current_user %}
+	{% include 'shared/swagger_ui', spec_system_name: "Account-Transactions-UK" %}
+{% else %}
+	{% include 'shared/swagger_ui', spec_system_name: "open-apis-uk" %}
+{% endif %}
         
 
 
