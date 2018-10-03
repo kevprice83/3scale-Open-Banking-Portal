@@ -24,6 +24,7 @@
         
 {% if current_user %}
 	{% include 'shared/swagger_ui', spec_system_name: "Account-Transactions-UK" %}
+	{% include 'keycloak_client' %}
 {% else %}
 	{% include 'shared/swagger_ui', spec_system_name: "open-apis-uk" %}
 {% endif %}
