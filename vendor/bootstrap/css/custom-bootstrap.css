@@ -5006,14 +5006,14 @@ ol > li.breadcrumb-item.active > a  {
 
 .jumbotron {
   padding: 2rem 1rem;
-  background-color: #113388;
+  background-color: #DBDBDB;
   color: #fff;
 }
 
 @media (min-width: 576px) {
   .jumbotron {
     padding: 4rem 2rem;
-    background-color: #004153;
+    background-color: #DBDBDB;
   }
 }
 
@@ -5029,16 +5029,17 @@ ol > li.breadcrumb-item.active > a  {
 
 .landing-container {
   max-width: 100%;
-  padding: 100px;
+  padding: 12rem;
 }
 
 .quote-block {
   background-color: rgb(255,255,255);
+  color: #161616;
 }
 
 .info-block {
-  background-color: rgb(64,113,127);
-  color: rgb(255,255,255);
+  background-color: #DBDBDB;
+  color: #161616;
 }
 
 .landing-wrapper {
@@ -5050,7 +5051,29 @@ ol > li.breadcrumb-item.active > a  {
   background-color: #004153;
 }
 
+.bg-catalog > .card-header,
+.bg-catalog > .card-footer {
+  background-color: rgba(255,255,255,0.125);
+}
+
+.bg-catalog > .card-body {
+  background-color: rgba(255,255,255,0.1875);
+}
+
+div.quote-block > h1 {
+  color: #161616;
+}
+
 /* CUSTOM LANDING PAGE CONTAINERS END */
+
+
+/* CUSTOM ICONS BEGIN */
+
+.fa-check {
+  color: #629401
+}
+
+/* CUSTOM ICONS END */
 
 /* CUSTOM CONTENT CONTAINERS BEGIN */
 
