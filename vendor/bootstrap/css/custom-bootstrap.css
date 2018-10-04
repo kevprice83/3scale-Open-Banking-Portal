@@ -261,6 +261,12 @@ figure {
 img {
   vertical-align: middle;
   border-style: none;
+  max-width: 100%;
+  height: auto;
+}
+
+.img-sm {
+  height: 12rem;
 }
 
 svg {
@@ -5045,6 +5051,28 @@ ol > li.breadcrumb-item.active > a  {
 }
 
 /* CUSTOM LANDING PAGE CONTAINERS END */
+
+/* CUSTOM CONTENT CONTAINERS BEGIN */
+
+.header-container {
+  width: 100%;
+}
+
+.content-container {
+  margin-bottom: 2rem;
+}
+
+/* CUSTOM CONTENT CONTAINERS END */
+
+/* CUSTOM HEADERS BEGIN */
+
+h1,
+h2,
+h3 {
+  color: #8D0000;
+}
+
+/* CUSTOM HEADERS END */
 
 .alert {
   position: relative;
