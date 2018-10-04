@@ -278,6 +278,7 @@ This is the power of <b>application programming interfaces</b> (APIs).
       <br/>
       
        {% for service in model.services %}
+          {% for service_plan in service.service_plans %}
         <div class="row">
           
         <h3 style="width: 100%;">{{ service.name }}</h3>
@@ -338,7 +339,7 @@ This is the power of <b>application programming interfaces</b> (APIs).
           </div>
         {% endfor %}
           </div>
-        
+        {% endfor %}
        {% endfor %}
       
       </div>
