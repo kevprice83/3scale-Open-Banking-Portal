@@ -1,4 +1,4 @@
-  {% if current_user %}
+<!-- DO NOT RENDER DIFFERENT CONTENT FOR A LOGGED IN USER
   <div class="landing-container">
   <div class="text-center">
   <div class="row">
@@ -29,7 +29,7 @@
   </div>
   </div>
   </div>
-
+-->
   <!--<div class="col-xl-4 col-sm-6 mb-3">
                 <div class="card text-white bg-catalog o-hidden h-100">
                   <div class="card-header">Account Information API</div>
@@ -122,7 +122,7 @@
     </div>
     </section>-->
 
-  {% else %}
+ 
 
   <header class="jumbotron page-header">
     <div class="container">
@@ -136,7 +136,7 @@
     <section>
       <div class="landing-container quote-block">
         <div class="text-center">
-            <h1><i>Build out your Open Banking Platform Business Model of the Future with APIs</i></h1>
+            <h1 style="color: #161616;"><i>Build out your Open Banking Platform Business Model of the Future with APIs</i></h1>
             
         </div>
     </div>
@@ -214,7 +214,7 @@
         </div>
         </div>-->
 
-    <section>
+    <section id="banking-regulations">
       
       <div class="landing-container">
       <div class="text-center">
@@ -291,7 +291,7 @@
   </div>
 
   </section>
-  <section>
+  <section id="app-gallery">
     
     <div class="landing-container">
       <div class="content-container">
@@ -299,13 +299,13 @@
           <div class="col-md-12">
             <div class="text-center header-container">
               <h1>App Gallery</h1>
-              </br>
+              <br/>
               <h4>See here some examples of what our developers and partners have created using our APIs.</h4>
             </div>
           </div>
         </div>
       </div>
-      </br>
+      <br/>
       <div class="content-container">
         <div class="row">
           <div class="col-md-7">
@@ -318,9 +318,7 @@
           </div>
         </div>
       </div>
-    </div>
-    </br>
-    <div class="container">
+    <br/>
       <div class="content-container">
         <div class="row">
           <div class="col-md-4">
@@ -336,7 +334,8 @@
           </div>
         </div>
       </div>
-      </div>
+  </div>
+</div>
     
   </section>
 
@@ -348,14 +347,17 @@
       <div class="landing-container info-block">
         <div class="text-center">
         <h1>API Access Levels</h1>
+        <hr>
         <br/>
         
         {% for service in model.services %}
 
           {% for service_plan in service.service_plans %}
+          <div class="content-container">
           <div class="row">
-            
+            <div class="text-center header-container">
           <h3 style="width: 100%;">{{ service.name }}</h3>
+          </div>
           {% for plan in service.application_plans %}
             <div class="col-xl-6 col-sm-6 mb-3">
               <div class="card text-white bg-catalog o-hidden h-100">
@@ -405,7 +407,7 @@
                   <div class="row">
                     <div class="col-xl-12 col-sm-12">
 
-                      <a class="btn btn-success" href="{{ urls.signup }}?{{ plan | to_param }}">Signup to plan {{ plan.name }}</a>
+                      <a class="btn btn-success" href="{{ urls.signup }}?{{ plan | to_param }}">Signup to {{ plan.name }}</a>
                     </div>
                   </div>
 
@@ -414,6 +416,7 @@
             </div>
           {% endfor %}
             </div>
+            </div>
           {% endfor %}
         {% endfor %}
         
@@ -421,7 +424,7 @@
       </div>
     
   </section>
-  <section>
+  <section id="about">
   
         <div class="landing-container">
         <div class="content-container">
@@ -431,13 +434,17 @@
           <div class="text-center">
           <h1>Red Hat's Open Banking Vision</h1>
             <p>This page will introduce the following four topics on a high level and then refer to corresponding subpages:</p>
+            <hr>
+            <br/>
             
       <h2>Red Hat</h2>        
               <p>Open source, open banking and open APIs are not necessarily strictly connected. Red Hat is well know for the unique open source based development model. It is very beneficial but also very hard to get right. The main benefits for customers of open source based products, which are fuelled by on a large and active community, are transparency, security and speed. This is why more and more open source based products evolve on the market -- not just in banking. (more about <a href>Red Hat</a>)</p>        
-          
+          <hr>
+          <br/>
       <h2>Open Banking Use Cases</h2>        
               <p>A paragraph of description. (more about <a href>Open Banking Use Cases</a>)</p>    
-          
+          <hr>
+          <br/>
       <h2>Red Hat’s Agile Integration Concept</h2>        
               <p>Since 2011 the number of regulations a bank needs to comply with has tripled on a global level. Complying with regulations is costly, risky and can have serious impact on a bank's business. This impact, however, can go both ways. Banks have a choice about how to comply with regulations such as PSD2 in Europe. They can either do the bare minimum, which on first sight may appear to be cheaper. But banks may inadvertently set themselves up for irrelevance by becoming a service provider who has to compete on price with little or no customer engagement. Or a bank can embrace the regulations and approach them head on with the strategic objective to become the bank central to everyday life based on a future proof banking platform business model.</p> 
 
@@ -461,7 +468,8 @@
 
   <p>This is a fundamentally different approach to the traditional way of building, integrating and deploying software systems. In the past, such systems were typically built as a centralised, monolithic application hosted in an on-premise data center, which is inflexible, inefficient and expensive. Agile integration allows to build containerized cloud-native applications and deploy them in hybrid cloud infrastructures that span on-premise data centers as well as private or public clouds and allow on demand scaling. </p>
                 
-          
+          <hr>
+          <br/>
       <h2>Open Banking Reference Implementation</h2>        
               <p>A paragraph of description. (more about <a href>Reference Implementation</a>)</p>     
           </div>
@@ -503,4 +511,4 @@
         </div>
     </section>
   -->
-  {% endif %}
+ 
