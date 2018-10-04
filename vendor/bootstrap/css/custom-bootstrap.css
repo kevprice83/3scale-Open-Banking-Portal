@@ -5060,6 +5060,14 @@ div.quote-block > h1 {
 
 /* CUSTOM LANDING PAGE CONTAINERS END */
 
+/* CUSTOM ICONS BEGIN */
+
+.fa-check {
+  color: #629401
+}
+
+/* CUSTOM ICONS END */
+
 .alert {
   position: relative;
   padding: 0.75rem 1.25rem;
