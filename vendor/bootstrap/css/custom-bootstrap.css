@@ -261,6 +261,12 @@ figure {
 img {
   vertical-align: middle;
   border-style: none;
+  max-width: 100%;
+  height: auto;
+}
+
+.img-sm {
+  height: 12rem;
 }
 
 svg {
@@ -5060,6 +5066,7 @@ div.quote-block > h1 {
 
 /* CUSTOM LANDING PAGE CONTAINERS END */
 
+
 /* CUSTOM ICONS BEGIN */
 
 .fa-check {
@@ -5067,6 +5074,28 @@ div.quote-block > h1 {
 }
 
 /* CUSTOM ICONS END */
+
+/* CUSTOM CONTENT CONTAINERS BEGIN */
+
+.header-container {
+  width: 100%;
+}
+
+.content-container {
+  margin-bottom: 2rem;
+}
+
+/* CUSTOM CONTENT CONTAINERS END */
+
+/* CUSTOM HEADERS BEGIN */
+
+h1,
+h2,
+h3 {
+  color: #8D0000;
+}
+
+/* CUSTOM HEADERS END */
 
 .alert {
   position: relative;
