@@ -292,7 +292,7 @@ This is the power of <b>application programming interfaces</b> (APIs).
                 <div class="row">
 
                   {% if plan.features == present %}
-                    <div class="col-sm-6">
+                    <div class="col-xl-12 col-sm-12">
                       <h5>Features</h5>
                       <ul class="features list-unstyled">
                         {% for feature in plan.features %}
@@ -304,7 +304,7 @@ This is the power of <b>application programming interfaces</b> (APIs).
                       </ul>
                     </div>
                   {% endif %}
-
+                  <!-- DO NOT RENDER LIMITS FOR NOW MAYBE ENABLE THIS AT A LATER DATE
                   <div class="col-sm-6">
                     <h5>Limits</h5>
                     <ul class="limits list-unstyled">
@@ -323,14 +323,15 @@ This is the power of <b>application programming interfaces</b> (APIs).
                       {% endif %}
                     </ul>
                   </div>
+                  -->
 
                 </div>
               </div>
                 <div class="card-footer text-white clearfix small z-1">
                 <div class="row">
-                  <div class="col-xl-12">
+                  <div class="col-xl-12 col-sm-12">
 
-                    <a class="btn btn-success pull-right" href="{{ urls.signup }}?{{ plan | to_param }}">Signup to plan {{ plan.name }}</a>
+                    <a class="btn btn-success" href="{{ urls.signup }}?{{ plan | to_param }}">Signup to plan {{ plan.name }}</a>
                   </div>
                 </div>
 
