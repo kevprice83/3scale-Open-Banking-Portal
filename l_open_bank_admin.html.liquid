@@ -46,7 +46,7 @@
 
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-      <a class="navbar-brand mr-1" href="/">{{provider.name}} API</a>
+      <a class="mr-1" href="/">{{provider.name}}</a>
 
       <button class="btn btn-link btn-sm text-white order-sm-0" id="sidebarToggle" href="#">
         <i class="fas fa-bars"></i>
@@ -104,6 +104,7 @@
       </ul>
 	{% else %}
       <ul class="navbar-nav ml-auto">
+      <!-- REMOVE NAVBAR NON-LOGGED IN MENU ITEMS
         <li class="nav-item no-arrow mx-1">
           <a class="nav-link" href="/docs" role="button">
             Documentation
@@ -124,6 +125,7 @@
             About
           </a>
         </li>
+        -->
         <li class="nav-item no-arrow mx-1">
           <a class="nav-link" href="{{ urls.login }}" role="button">
             <i class="fas fa-sign-in-alt fa-fw"></i>
@@ -143,31 +145,35 @@
             <span>Dashboard</span>
           </a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-fw fa-folder"></i>
-            <span>Pages</span>
-          </a>
-          <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-            <h6 class="dropdown-header">Documentation:</h6>
-            <a class="dropdown-item" href="/docs">Interactive Docs</a>
-            <a class="dropdown-item" href="/appgallery">App Gallery</a>
-            <a class="dropdown-item" href="/bankingregulations">Banking Regulations</a>
-            <div class="dropdown-divider"></div>
-            <h6 class="dropdown-header">Other Pages:</h6>
-            <a class="dropdown-item" href="/about">About OBI</a>
-          <div>
-        </li>
         <li class="nav-item">
           <a class="nav-link" href="{{urls.stats}}">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Stats</span></a>
         </li>
-        <!--<li class="nav-item">
-          <a class="nav-link" href="tables.html">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Random</span></a>
-        </li>-->
+        <li class="nav-item">
+          <a class="nav-link" href="/docs">
+            <i class="fas fa-fw fa-book"></i>
+            <span>Documentation</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/#app-gallery">
+            <i class="fas fa-fw fa-code"></i>
+            <span>App Gallery</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/#banking-regulations">
+            <i class="fas fa-fw fa-gavel"></i>
+            <span>Banking Regulations</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/#about">
+            <i class="fas fa-fw fa-info-circle"></i>
+            <span>About</span>
+          </a>
+        </li>
       </ul>
       {% endif %}
 
