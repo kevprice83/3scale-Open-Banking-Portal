@@ -300,7 +300,7 @@
 
 </section>
 <section id="app-gallery">
-  <div id="accordion">
+  <div id="accordionOne">
     <div class="landing-container">
       <div class="content-container">
         <div class="row">
@@ -317,7 +317,7 @@
         </div>
       </div>
       <br />
-      <div class="collapse" id="collapseOne" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="collapse" id="collapseOne" aria-labelledby="headingOne" data-parent="#accordionOne">
         <div class="content-container">
           <div class="row">
             <div class="col-md-7">
@@ -482,19 +482,21 @@
 
 </section>
 <section id="about">
-
+<div id="accordionTwo">
   <div class="landing-container">
     <div class="content-container">
 
       <div class="row">
         <div class="col-xl-12 col-md-12">
-          <div>
+          <div id="headingTwo">
             <h1>Red Hat's Open Banking Vision</h1>
             <p>This page will introduce the following four topics on a high level and then refer to corresponding
               subpages:</p>
+              <a data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" style="cursor: pointer;"><i class="fas fa-angle-down"></i> About</a>
             <hr>
             <br />
-
+          </div>
+            <div class="collapse" id="collapseTwo" aria-labelledby="headingTwo" data-parent="#accordionTwo">
             <h2>Red Hat</h2>
             <p>Open source, open banking and open APIs are not necessarily strictly connected. Red Hat is well know for
               the unique open source based development model. It is very beneficial but also very hard to get right.
@@ -533,7 +535,7 @@
             <p>This is the vision. But achieving this is not a straightforward task requiring some fundamental changes
               with respect to internal processes, culture, technological and architectural approaches to build out the
               required capabilities. Some of most critical capabilities include: </p>
-          </div>
+          
           <ul>
             <li>Controlled openness so that the bank knows who does what with their data</li>
             <li>Agility to create new services quickly based on market demand</li>
@@ -544,7 +546,7 @@
             <li>Continuous integration and delivery and automatable lifecycle management</li>
             <li>System-wide business monitoring, reporting and alerting</li>
           </ul>
-          <div>
+          
             <p>To achieve this solution architecture of the Red Hat Open Banking platform resides on the principles of
               <a href=https://www.redhat.com/en/engage/agile-integration-devops-containers-20180614>Agile Integration</a>.
                 Agile Integration addresses typical integration challenges with an architectural approach centered
@@ -561,12 +563,14 @@
             <br />
             <h2>Open Banking Reference Implementation</h2>
             <p>A paragraph of description. (more about <a href>Reference Implementation</a>)</p>
+          
           </div>
         </div>
       </div>
+
     </div>
   </div>
-
+</div>
 
 
 
