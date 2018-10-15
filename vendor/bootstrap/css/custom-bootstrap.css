@@ -2392,7 +2392,7 @@ textarea.form-control {
   display: inline-block;
   font-weight: 400;
   text-align: center;
-  white-space: nowrap;
+  /* white-space: nowrap; */
   vertical-align: middle;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -4101,6 +4101,14 @@ input[type="button"].btn-block {
   white-space: nowrap;
 }
 
+/* CUSTOM NAVBAR BEGINS */
+
+#page-top > nav > a:first-child {
+  color: #fff;
+}
+
+/* CUSTOM NAVBAR ENDS */
+
 .navbar-brand:hover, .navbar-brand:focus {
   text-decoration: none;
 }
@@ -5029,7 +5037,7 @@ ol > li.breadcrumb-item.active > a  {
 
 .landing-container {
   max-width: 100%;
-  padding: 12rem;
+  padding: 4rem 2rem;
 }
 
 .quote-block {
