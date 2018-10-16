@@ -147,8 +147,7 @@
     <div class="text-center">
       <div class="row">
         <div class="col-xl-8 offset-xl-2">
-          <h3><i>“Banking services are necessary. Banks are not”</i></h3>
-          <h3><i> -- Bill Gates, mid 90s</i></h3>
+          
           <p>
             Since 2011 the number of regulations a bank needs to track on a global level has tripled. Complying with all
             these regulations can be seen as a burden or even threat. But it can also be embraced to entirely reinvent a
@@ -162,6 +161,8 @@
             This is the power of <b>application programming interfaces</b> (APIs).
           </p>
           <p></p>
+          <h3><i>“Banking services are necessary. Banks are not”</i></h3>
+          <h3><i> -- Bill Gates, mid 90s</i></h3>
         </div>
       </div>
 
@@ -225,21 +226,36 @@
         </div>-->
 
 <section id="banking-regulations">
-
+<div id="accordionThree">
   <div class="landing-container">
-    <div class="text-center">
+     <div class="text-center"> 
       <div class="content-container">
         <div class="row">
-          <div class="col-md-12 col-xl-8 offset-xl-2">
+          <!-- <div class="col-md-12 col-xl-8 offset-xl-2" id="headingThree"> -->
+          <div class="col-xl-8 col-md-8 offset-xl-2 offset-md-2" id="headingThree">
             <h1>Banking regulations -- Turning a threat into an opportunity</h1>
-            <a href="#">Read More</a>
+            
+              
+            <a data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree" style="cursor: pointer;"><i class="fas fa-angle-down"></i> Read More</a>
+            
+            <div class="collapse" id="collapseThree" aria-labelledby="headingThree" data-parent="#accordionThree">
+        	  
+                
+            	<p>Since 2011 the number of regulations a bank needs to comply with has tripled on a global level.
+              Complying with regulations is costly, risky and can have serious impact on a bank's business. The diagram below is from <a href="https://www.mckinsey.com/industries/financial-services/our-insights/data-sharing-and-open-banking" target="_blank">McKinsey</a> and shows a selection of world-wide regulations.</p> 
+              <img src="https://www.mckinsey.com/~/media/McKinsey/Industries/Financial%20Services/Our%20Insights/Data%20sharing%20and%20open%20banking/SVGZ-Data-sharing-and-open-banking-Ex2.ashx">
+              <p>One of the most well-known and established regulation in Europe is the <a href="https://ec.europa.eu/info/law/payment-services-psd-2-directive-eu-2015-2366_en" target="_blank">Payment Service Directive 2</a> (PSD2). Here is a <a href="http://mgboyd.com/psd2-focusing-on-action-with-open-apis/" target="_blank">further report</a> that translates the legislative into more actionable items.</p>  
+                <p>For more details please refer to our Red Hat <a href="https://www.redhat.com/en/technologies/industries/financial/open-banking" target="_blank">Open Banking</a> page.</p>
+            	<br>  
+          
+          	</div>
 
           </div>
         </div>
       </div>
     </div>
   </div>
-
+</div>
 </section>
 <section>
 
@@ -478,7 +494,7 @@
                 <div class="row">
                   <div class="col-xl-12 col-sm-12">
 
-                    <a class="btn btn-success" {% if plan.system_name contains "partner" or plan.system_name contains "premium" %}mailto="{{ service.support_email }}"{% else %}href="{{ urls.signup }}?{{ plan | to_param }}"{% endif %}>Signup to {{ plan.name }}</a>
+                    <a class="btn btn-success" {% if plan.system_name contains "partner" or plan.system_name contains "premium" %}mailto="{{ provider.support_email }}"{% else %}href="{{ urls.signup }}?{{ plan | to_param }}"{% endif %}>Signup to {{ plan.name }}</a>
                   </div>
                 </div>
 
