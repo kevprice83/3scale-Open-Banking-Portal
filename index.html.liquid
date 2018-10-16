@@ -433,7 +433,7 @@
           <div class="col-xl-4 {% cycle 'offset-xl-2', '' %} col-sm-6 mb-3">
             <div class="card text-white bg-catalog o-hidden h-100">
               <div class="card-header">
-                <strong>{{ plan.name }}</strong>
+                <strong>{{ plan.system_name }}</strong>
               </div>
               <div class="card-body">
                 <div class="row">
@@ -478,7 +478,7 @@
                 <div class="row">
                   <div class="col-xl-12 col-sm-12">
 
-                    <a class="btn btn-success" href="{{ urls.signup }}?{{ plan | to_param }}">Signup to {{ plan.name }}</a>
+                    <a class="btn btn-success" {% if plan.system_name contains "partner" or plan.system_name contains "premium" %}mailto="{{ provider.support_email }}"{% else %}href="{{ urls.signup }}?{{ plan | to_param }}"{% endif %}>Signup to {{ plan.name }}</a>
                   </div>
                 </div>
 
