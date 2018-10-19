@@ -20,12 +20,22 @@
     </div>
   </div>
 
+<div class="form-group">
+  <label class="control-label col-md-4">Service</label>
+  <div class="col-md-6">
+    <p class="form-control-static">
+      <strong>{{application.plan.service.name}}</strong>
+    </p>
+  </div>
+</div>
+
 
 
   {% for field in application.fields %}
-    {% include 'field' with field %}
+    {% include 'applications_field' with field %}
   {% endfor %}
 
 
 {% include 'new_application_licence' %}
+
 
