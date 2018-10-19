@@ -7,7 +7,7 @@
             
         	
         	    
-        		<a class="btn btn-success" href="">Check our developer guide</a>
+        		<!--<a class="btn btn-success" href="">Check our developer guide</a>-->
               
      
         <h1>Interactive documentation</h1>
@@ -16,16 +16,15 @@
       </div>
     </div>
 </div>
-<div class="container">
-{% include 'oauth_widget' %}
-</div>
 {% cdn_asset /swagger-ui/2.2.10/swagger-ui.js %}
         
 {% cdn_asset /swagger-ui/2.2.10/swagger-ui.css %}
        
 {% if current_user %}
+	<div class="container">
+	{% include 'oauth_widget' %}
+	</div>
 	{% include 'shared/swagger_ui', spec_system_name: "Account-Transactions-UK" %}
-	{% include 'keycloak_client' %}
 {% else %}
 	{% include 'shared/swagger_ui', spec_system_name: "open-apis-uk" %}
 {% endif %}
@@ -55,3 +54,4 @@
 </script>
 
 {% include 'keycloak_client' %}
+
