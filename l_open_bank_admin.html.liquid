@@ -44,7 +44,7 @@
 
   <body id="page-top" class="{% if request.path == '/login' or request.path contains '/signup' or request.path contains '/password' %}bg-dark{% endif %}">
 
-    <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+    <nav class="navbar navbar-expand navbar-dark bg-dark fixed-top">
 
       <a class="mr-1" href="/">{{provider.name}}</a>
 
@@ -138,7 +138,7 @@
     <div id="wrapper">
 	{% if current_user %}
       <!-- Sidebar -->
-      <ul class="sidebar navbar-nav">
+      <ul class="sidebar navbar-nav fixed-top" style="z-index: 0;">
         <li class="nav-item">
           <a class="nav-link" href="{{ urls.applications }}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
@@ -187,10 +187,10 @@
         <!-- /.container-fluid -->
 		
         <!-- Sticky Footer -->
-        <footer class="sticky-footer bg-dark" {% unless current_user %} style="width: 100%! important" {% endunless %}>
+        <footer class="sticky-footer bg-dark" style="width: 100%;">
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
-              <span>{{ provider.name }} {{ today.year }}</span>
+              <span>{{ provider.name }} {{ today.year }} -- Showcasing the power of Red Hat solutions for Open Banking.</span><a href="https://www.redhat.com/en/contact#contact-form" target="_blank"> Contact us</a>
             </div>
           </div>
         </footer>
@@ -238,4 +238,5 @@
   </body>
 
 </html>
+
 
