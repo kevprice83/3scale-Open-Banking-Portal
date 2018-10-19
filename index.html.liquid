@@ -124,7 +124,7 @@
 
 
 
-<header class="jumbotron page-header" style="margin-top: 56px;">
+<header class="jumbotron page-header">
   <div class="container">
     <div class="text-center">
 
@@ -494,7 +494,7 @@
                 <div class="row">
                   <div class="col-xl-12 col-sm-12">
 
-                    <a class="btn btn-success" {% if plan.system_name contains "partner" or plan.system_name contains "premium" %}mailto="{{ service.support_email }}"{% else %}href="{{ urls.signup }}?{{ plan | to_param }}"{% endif %}>Signup to {{ plan.name }}</a>
+                    <a class="btn btn-success" {% if plan.system_name contains "partner" or plan.system_name contains "premium" %}href="mailto:{{ service.support_email }}"{% else %}href="{{ urls.signup }}?{{ plan | to_param }}"{% endif %}>Signup to {{ plan.name }}</a>
                   </div>
                 </div>
 
