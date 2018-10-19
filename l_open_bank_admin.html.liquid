@@ -71,17 +71,21 @@
         
         <li class="nav-item dropdown no-arrow mx-1">
           <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            
             {% assign alerts = 0 %}
             {% for application in current_account.applications %}
             
             {% assign alerts = alerts | plus: application.alerts.size %}
             
             {% endfor %}
+            
             <span class="badge badge-danger">{{ alerts }}</span>
             <i class="fas fa-bell fa-fw"></i>
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="alertsDropdown">
-            <a class="dropdown-item" href="{{ application.alerts_url }}">Usage alert(s)</a>
+            {% for application in current_account.applications %}
+            <a class="dropdown-item" href="{{ application.alerts_url }}">{{ application.name }} - Usage alert(s)</a>
+            {% endfor %}
           </div>
         </li>
         
