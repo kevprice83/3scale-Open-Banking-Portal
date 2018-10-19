@@ -493,8 +493,11 @@
               <div class="card-footer text-white clearfix small z-1">
                 <div class="row">
                   <div class="col-xl-12 col-sm-12">
-
+					{% if current_user %}
+                    <a class="btn btn-success" {% if plan.system_name contains "partner" or plan.system_name contains "premium" %}href="mailto:{{ service.support_email }}"{% else %}href="{{urls.new_application}}?service_id={{service.system_name}}&amp;application[plan_id]={{plan.id}}"{% endif %}>Signup to {{ plan.name }}</a>
+                    {% else %}
                     <a class="btn btn-success" {% if plan.system_name contains "partner" or plan.system_name contains "premium" %}href="mailto:{{ service.support_email }}"{% else %}href="{{ urls.signup }}?{{ plan | to_param }}"{% endif %}>Signup to {{ plan.name }}</a>
+                    {% endif %}
                   </div>
                 </div>
 
