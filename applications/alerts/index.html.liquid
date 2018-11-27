@@ -1,17 +1,14 @@
-<div class="row">
-  <div class="col-md-9">
-    <div class="panel panel-default">
-      <div class="panel-heading">
+<div class="card mb-3">
+      <div class="card-header">
         <a href="{{ application.url }}">
           <i class="fa fa-chevron-left"></i>
           Application {{ application.name }}
         </a>
       </div>
-      <div class="panel-heading">
-        <h3 class="panel-title">Alerts</h3>
-      </div>
-      <table class="table panel panel-default" id="limit_alerts">
-        <thead class="panel-heading">
+      <div class="card-body">
+        <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
           <tr>
             <th>Message</th>
             <th>{% sort_link column: "level" %}</th>
@@ -23,7 +20,7 @@
             </th>
           </tr>
         </thead>
-        <tbody class="panel-body panel-footer">
+        <tbody>
           {% if alerts.size > 0 %}
             {% for alert in alerts %}
               <tr class="alert" id="alert">
@@ -31,17 +28,30 @@
                 <td>{{ alert.formatted_level }}</td>
                 <td>{{ alert.timestamp | date: i18n.default_time }}</td>
                 <td>
-                  {{ '<i class="fa fa-trash"></i>' | html_safe | link_to:  alert.delete_alert_url, title: 'Delete alert', method: 'delete' }}
+                  {{ '<i class="fas fa-trash"></i>' | html_safe | link_to:  alert.delete_alert_url, title: 'Delete alert', method: 'delete' }}
                 </td>
               </tr>
             {% endfor %}
           {% else %}
-            <tr class="no_results">
+            <tr>
               <td colspan="5">There are no recent alerts or violations.</td>
             </tr>
           {% endif %}
         </tbody>
+        <tfoot>
+          <tr>
+            <th>Message</th>
+            <th>{% sort_link column: "level" %}</th>
+            <th>{% sort_link column: "timestamp" label: "Time" %}</th>
+            <th>
+              {% if alerts.size > 0 %}
+                {{ 'Delete all' | delete_button: application.purge_alerts_url, class: 'delete btn btn-default btn-sm', confirm: 'Do you really want to delete all alerts? There is no undo.' }}
+              {% endif %}
+            </th>
+          </tr>
+        </tfoot>
       </table>
-    </div>
-  </div>
+      </div>
+      </div>
+    
 </div>

@@ -280,7 +280,7 @@
               This allows regulated third party providers to read account information, such as transaction or balance
               details in an online payment account.
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="#">
+            <a class="card-footer text-white clearfix small z-1" href="https://openbanking.atlassian.net/wiki/spaces/DZ/pages/23363964" target="_blank">
               <span class="float-left">View Details</span>
               <span class="float-right">
                 <i class="fas fa-angle-right"></i>
@@ -295,7 +295,7 @@
               This allows regulated third party providers to set up or make payments directly from an online payment
               account, such as a single payment or a recurring payment.
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="#">
+            <a class="card-footer text-white clearfix small z-1" href="https://openbanking.atlassian.net/wiki/spaces/DZ/pages/23363964" target="_blank">
               <span class="float-left">View Details</span>
               <span class="float-right">
                 <i class="fas fa-angle-right"></i>
@@ -310,7 +310,7 @@
               This makes publicly available information easy to use in mobile and web applications. This data includes
               product information, ATM and branch locations plus information and metrics about service quality.
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="#">
+            <a class="card-footer text-white clearfix small z-1" href="https://openbanking.atlassian.net/wiki/spaces/DZ/pages/16320694/Open+Data+API+Specifications" target="_blank">
               <span class="float-left">View Details</span>
               <span class="float-right">
                 <i class="fas fa-angle-right"></i>
@@ -493,8 +493,11 @@
               <div class="card-footer text-white clearfix small z-1">
                 <div class="row">
                   <div class="col-xl-12 col-sm-12">
-
-                    <a class="btn btn-success" {% if plan.system_name contains "partner" or plan.system_name contains "premium" %}mailto="{{ service.support_email }}"{% else %}href="{{ urls.signup }}?{{ plan | to_param }}"{% endif %}>Signup to {{ plan.name }}</a>
+					{% if current_user %}
+                    <a class="btn btn-success" {% if plan.system_name contains "partner" or plan.system_name contains "premium" %}href="mailto:{{ service.support_email }}"{% else %}href="{{urls.new_application}}?service_id={{service.system_name}}&amp;application[plan_id]={{plan.id}}"{% endif %}>Signup to {{ plan.name }}</a>
+                    {% else %}
+                    <a class="btn btn-success" {% if plan.system_name contains "partner" or plan.system_name contains "premium" %}href="mailto:{{ service.support_email }}"{% else %}href="{{ urls.signup }}?{{ plan | to_param }}"{% endif %}>Signup to {{ plan.name }}</a>
+                    {% endif %}
                   </div>
                 </div>
 

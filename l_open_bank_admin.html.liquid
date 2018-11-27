@@ -68,21 +68,31 @@
 	
       <!-- Navbar -->
       <ul class="navbar-nav ml-auto">
+        
         <li class="nav-item dropdown no-arrow mx-1">
           <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            
+            {% assign alerts = 0 %}
+            {% for application in current_account.applications %}
+            
+            {% assign alerts = alerts | plus: application.alerts.size %}
+            
+            {% endfor %}
+            
+            <span class="badge badge-danger">{{ alerts }}</span>
             <i class="fas fa-bell fa-fw"></i>
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="alertsDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
+            {% for application in current_account.applications %}
+            <a class="dropdown-item" href="{{ application.alerts_url }}">{{ application.name }} - Usage alert(s)</a>
+            {% endfor %}
           </div>
         </li>
+        
         <li class="nav-item dropdown no-arrow mx-1">
           <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-envelope fa-fw"></i>
             <span class="badge badge-danger">{{ current_account.unread_messages.size }}</span>
+            <i class="fas fa-envelope fa-fw"></i>
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="messagesDropdown">
             <a class="dropdown-item" href="/admin/messages/received">Inbox</a>
@@ -187,10 +197,10 @@
         <!-- /.container-fluid -->
 		
         <!-- Sticky Footer -->
-        <footer class="sticky-footer bg-dark" {% unless current_user %} style="width: 100%! important" {% endunless %}>
+        <footer class="sticky-footer bg-dark" style="width: 100%;">
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
-              <span>{{ provider.name }} {{ today.year }}</span>
+              <span>{{ provider.name }} {{ today.year }} -- Showcasing the power of Red Hat solutions for Open Banking.</span><a href="https://www.redhat.com/en/contact#contact-form" target="_blank"> Contact us</a>
             </div>
           </div>
         </footer>
@@ -238,4 +248,5 @@
   </body>
 
 </html>
+
 
